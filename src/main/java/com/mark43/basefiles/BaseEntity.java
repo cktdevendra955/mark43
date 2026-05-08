@@ -1,4 +1,4 @@
-package com.mark43.auth.entity;
+package com.mark43.basefiles;
 
 
 import jakarta.persistence.*;

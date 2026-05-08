@@ -1,6 +1,6 @@
 package com.mark43.auth.entity.user;
 
-import com.mark43.auth.entity.BaseEntity;
+import com.mark43.basefiles.BaseEntity;
 import com.mark43.auth.entity.role.RoleEntity;
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,12 +1,9 @@
 package com.mark43.auth.entity.role;
 
 
-import com.mark43.auth.entity.BaseEntity;
-import com.mark43.auth.entity.user.UserEntity;
+import com.mark43.basefiles.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Set;
 
 @Entity
 @Table(name = "roles")
