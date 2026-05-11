@@ -5,10 +5,11 @@ import com.mark43.user.dto.CertificationDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
+import java.util.UUID;
 
 public interface CertificationService {
-    ResponseEntity<?>  save(CertificationDto dto);
-    ResponseEntity<?> update(String uniqueId, CertificationDto dto);
-    Map<String,Object> getByProfileId(String profileId);
-    ResponseEntity<?> delete(String uniqueId);
+    ResponseEntity<?> create(CertificationDto dto);
+    ResponseEntity<?> update(UUID uniqueId, CertificationDto dto);
+    ResponseEntity<?> getAllByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
 }

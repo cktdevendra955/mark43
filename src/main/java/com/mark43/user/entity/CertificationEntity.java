@@ -5,8 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -14,11 +13,13 @@ import java.time.LocalDate;
 @Table(name = "certifications")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class CertificationEntity extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
+//    @ManyToOne
+//    @JoinColumn(name = "profile_id")
+    private Long profile;
 
     private String name;
 
