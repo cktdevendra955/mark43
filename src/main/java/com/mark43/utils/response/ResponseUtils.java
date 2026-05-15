@@ -8,6 +8,66 @@ import java.time.LocalDateTime;
 
 public final class ResponseUtils {
 
+        /*
+         * COMMON
+         */
+        public static final String SUCCESS = "Success";
+        public static final String FAILED = "Failed";
+        public static final String SOMETHING_WENT_WRONG = "Something went wrong";
+        public static final String INVALID_REQUEST = "Invalid request";
+        public static final String INTERNAL_SERVER_ERROR = "Internal server error";
+
+        /*
+         * CREATE
+         */
+        public static final String CREATED_SUCCESSFULLY = "Created successfully";
+        public static final String RECORD_CREATED_SUCCESSFULLY = "Record created successfully";
+
+        /*
+         * UPDATE
+         */
+        public static final String UPDATED_SUCCESSFULLY = "Updated successfully";
+        public static final String RECORD_UPDATED_SUCCESSFULLY = "Record updated successfully";
+
+        /*
+         * DELETE
+         */
+        public static final String DELETED_SUCCESSFULLY = "Deleted successfully";
+        public static final String RECORD_DELETED_SUCCESSFULLY = "Record deleted successfully";
+        public static final String RECORD_NOT_FOUND = "Record not found";
+
+        /*
+         * FETCH
+         */
+        public static final String FETCHED_SUCCESSFULLY = "Fetched successfully";
+        public static final String DATA_FOUND = "Data found";
+        public static final String NO_DATA_FOUND = "No data found";
+
+        /*
+         * AUTH
+         */
+        public static final String LOGIN_SUCCESSFUL = "Login successful";
+        public static final String LOGIN_FAILED = "Login failed";
+        public static final String INVALID_CREDENTIALS = "Invalid credentials";
+        public static final String UNAUTHORIZED = "Unauthorized access";
+        public static final String ACCESS_DENIED = "Access denied";
+        public static final String TOKEN_EXPIRED = "Token expired";
+        public static final String TOKEN_INVALID = "Invalid token";
+
+        /*
+         * USER
+         */
+        public static final String USER_NOT_FOUND = "User not found";
+        public static final String USER_ALREADY_EXISTS = "User already exists";
+
+        /*
+         * VALIDATION
+         */
+        public static final String VALIDATION_FAILED = "Validation failed";
+        public static final String REQUIRED_FIELDS_MISSING = "Required fields are missing";
+
+
+
     private ResponseUtils() {}
 
     public static <T> ResponseEntity<ApiResponse<T>> success(String message,T data) {

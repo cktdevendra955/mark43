@@ -355,4 +355,9 @@ public final class DateTimeUtil {
     public static boolean isLeapYear(int year) {
         return Year.isLeap(year);
     }
+
+
+    public static OffsetDateTime currentUtcDateTime() {
+        return OffsetDateTime.now(ZoneOffset.UTC);
+    }
 }

@@ -1,15 +1,17 @@
 package com.mark43.user.service.certification;
 
 import com.mark43.auth.utils.AuthUtil;
+import com.mark43.exception.custom.ResourceNotFoundException;
 import com.mark43.user.dto.CertificationDto;
 import com.mark43.user.entity.CertificationEntity;
 import com.mark43.user.repo.CertificationRepository;
 import com.mark43.utils.collectionutil.CollectionUtil;
+import com.mark43.utils.constant.AppConstant;
+import com.mark43.utils.datetimeutil.DateTimeUtil;
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 @Service
@@ -20,7 +22,7 @@ public class CertificationServiceImpl implements CertificationService{
 
     @Override
     public ResponseEntity<?> create(CertificationDto dto) {
-        try {
+
             CertificationEntity entity = new CertificationEntity();
             entity.setName(dto.getName());
             entity.setOrganization(dto.getOrganization());
@@ -30,15 +32,13 @@ public class CertificationServiceImpl implements CertificationService{
             entity.setProfile(AuthUtil.getUserId());
             certificationRepository.save(entity);
             return ResponseUtils.created("created",null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     @Override
     public ResponseEntity<?> update(UUID uniqueId, CertificationDto dto) {
-        try {
-            CertificationEntity entity = this.certificationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new RuntimeException("NOT FOUND."));
+
+            CertificationEntity entity = this.certificationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
             entity.setName(dto.getName());
             entity.setOrganization(dto.getOrganization());
             entity.setIssueDate(dto.getIssueDate());
@@ -47,9 +47,7 @@ public class CertificationServiceImpl implements CertificationService{
             entity.setProfile(AuthUtil.getUserId());
             certificationRepository.save(entity);
             return ResponseUtils.created("created",null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
     @Override
@@ -73,15 +71,11 @@ public class CertificationServiceImpl implements CertificationService{
         return ResponseUtils.success("success",response);
     }
 
-
     @Override
     public ResponseEntity<?> delete(UUID uniqueId) {
-        try {
-            CertificationEntity entity = this.certificationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new RuntimeException("NOT FOUND."));
-            certificationRepository.delete(entity);
-            return ResponseUtils.success("Deleted.",null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+            int rows = certificationRepository.softDeleteByUniqueId(uniqueId, DateTimeUtil.currentUtcDateTime(), AuthUtil.getUserId());
+            if(rows > 0)return ResponseUtils.success(ResponseUtils.SUCCESS,null);
+            return ResponseUtils.notFound(ResponseUtils.RECORD_NOT_FOUND);
+
     }
 }
