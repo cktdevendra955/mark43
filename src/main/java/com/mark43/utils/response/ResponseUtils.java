@@ -66,6 +66,14 @@ public final class ResponseUtils {
         public static final String VALIDATION_FAILED = "Validation failed";
         public static final String REQUIRED_FIELDS_MISSING = "Required fields are missing";
 
+        /*
+         * RESPONSE KEY
+         */
+        public static final String KEY_DATA_ARRAY = "data_array";
+        public static final String KEY_ERROR = "error";
+
+
+
 
 
     private ResponseUtils() {}

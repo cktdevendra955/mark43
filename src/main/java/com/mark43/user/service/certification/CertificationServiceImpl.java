@@ -31,7 +31,7 @@ public class CertificationServiceImpl implements CertificationService{
             entity.setExpiryDate(dto.getExpiryDate());
             entity.setProfile(AuthUtil.getUserId());
             certificationRepository.save(entity);
-            return ResponseUtils.created("created",null);
+            return ResponseUtils.created(ResponseUtils.CREATED_SUCCESSFULLY,null);
 
     }
 
@@ -46,7 +46,7 @@ public class CertificationServiceImpl implements CertificationService{
             entity.setExpiryDate(dto.getExpiryDate());
             entity.setProfile(AuthUtil.getUserId());
             certificationRepository.save(entity);
-            return ResponseUtils.created("created",null);
+            return ResponseUtils.created(ResponseUtils.UPDATED_SUCCESSFULLY,null);
 
     }
 
@@ -68,7 +68,7 @@ public class CertificationServiceImpl implements CertificationService{
             }
         }
         response.put("data_array",data_array);
-        return ResponseUtils.success("success",response);
+        return ResponseUtils.success(ResponseUtils.SUCCESS,response);
     }
 
     @Override

@@ -1,10 +1,12 @@
 package com.mark43.user.repo;
 
 import com.mark43.auth.entity.user.UserEntity;
+import com.mark43.user.entity.CertificationEntity;
 import com.mark43.user.entity.UserProfileEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
+import java.util.UUID;
 
 public interface UserProfileRepo extends JpaRepository<UserProfileEntity, Long> {
 
@@ -12,5 +14,6 @@ public interface UserProfileRepo extends JpaRepository<UserProfileEntity, Long> 
 
     Optional<UserProfileEntity> findByUserId(Long userId);
 
+    Optional<UserProfileEntity> findByUniqueId(UUID uniqueId);
 
 }

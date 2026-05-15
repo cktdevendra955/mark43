@@ -17,9 +17,7 @@ import java.time.LocalDate;
 @Setter
 public class EducationEntity extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
+    private Long profile;
 
     private String instituteName;
 
