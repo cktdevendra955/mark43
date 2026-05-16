@@ -1,17 +1,15 @@
 package com.mark43.user.service.resume;
 
 import com.mark43.user.dto.ResumeDto;
+import com.mark43.user.dto.language.UserLanguageDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
+import java.util.UUID;
 
 public interface ResumeService {
 
-    ResponseEntity<?> create(ResumeDto entity);
-
-    Map<String,Object> getByProfileId(String profileId);
-
-    Map<String,Object> getPrimaryResume(String profileId);
-
-    ResponseEntity<?> delete(String id);
+    ResponseEntity<?> upload(UserLanguageDto dto);
+    ResponseEntity<?> getResumeByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
 }

@@ -14,16 +14,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SkillEntity extends BaseEntity {
-
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
-
-    @ManyToOne
-    @JoinColumn(name = "skill_id")
-    private UserSkillEntity skill;
-
+    private Long profileId;
+    private Long skillId;
     private Integer experienceYears;
-
     private String proficiencyLevel;
 }

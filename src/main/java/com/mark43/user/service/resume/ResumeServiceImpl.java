@@ -1,32 +1,29 @@
 package com.mark43.user.service.resume;
 
 import com.mark43.user.dto.ResumeDto;
+import com.mark43.user.dto.language.UserLanguageDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class ResumeServiceImpl implements ResumeService{
 
 
     @Override
-    public ResponseEntity<?> create(ResumeDto entity) {
+    public ResponseEntity<?> upload(UserLanguageDto dto) {
         return null;
     }
 
     @Override
-    public Map<String, Object> getByProfileId(String profileId) {
-        return Map.of();
+    public ResponseEntity<?> getResumeByUser() {
+        return null;
     }
 
     @Override
-    public Map<String, Object> getPrimaryResume(String profileId) {
-        return Map.of();
-    }
-
-    @Override
-    public ResponseEntity<?> delete(String id) {
+    public ResponseEntity<?> delete(UUID uniqueId) {
         return null;
     }
 }

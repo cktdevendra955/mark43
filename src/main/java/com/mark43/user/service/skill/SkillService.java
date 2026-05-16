@@ -1,19 +1,13 @@
 package com.mark43.user.service.skill;
 
-import com.mark43.user.dto.SkillResponseDto;
+import com.mark43.user.dto.skill.SkillDto;
+import com.mark43.user.entity.SkillEntity;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Map;
+import java.util.UUID;
 
 public interface SkillService {
-
-    ResponseEntity<?> createSkill(SkillResponseDto dto);
-
-    Map<String,Object> getAllSkills();
-
-    Map<String,Object> getSkillById(String skillId);
-
-    Map<String,Object> searchSkills(String keyword);
-
-    ResponseEntity<?> deleteSkill(Long skillId);
+    ResponseEntity<?> create(SkillDto dto);
+    ResponseEntity<?> getAllByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
 }

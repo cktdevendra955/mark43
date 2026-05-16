@@ -1,4 +1,4 @@
-package com.mark43.user.service.language;
+package com.mark43.user.service.userlanguage;
 
 import com.mark43.auth.utils.AuthUtil;
 import com.mark43.user.dto.language.UserLanguageDto;

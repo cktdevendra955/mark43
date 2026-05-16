@@ -1,8 +1,7 @@
 package com.mark43.user.controller.userlanguage;
 
 import com.mark43.user.dto.language.UserLanguageDto;
-import com.mark43.user.dto.project.ProjectDto;
-import com.mark43.user.service.language.UserLanguageService;
+import com.mark43.user.service.userlanguage.UserLanguageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
