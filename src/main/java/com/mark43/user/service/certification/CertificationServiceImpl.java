@@ -2,11 +2,10 @@ package com.mark43.user.service.certification;
 
 import com.mark43.auth.utils.AuthUtil;
 import com.mark43.exception.custom.ResourceNotFoundException;
-import com.mark43.user.dto.CertificationDto;
+import com.mark43.user.dto.certification.CertificationDto;
 import com.mark43.user.entity.CertificationEntity;
 import com.mark43.user.repo.CertificationRepository;
 import com.mark43.utils.collectionutil.CollectionUtil;
-import com.mark43.utils.constant.AppConstant;
 import com.mark43.utils.datetimeutil.DateTimeUtil;
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;

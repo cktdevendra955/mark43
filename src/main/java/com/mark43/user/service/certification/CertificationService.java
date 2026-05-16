@@ -1,10 +1,9 @@
 package com.mark43.user.service.certification;
 
 
-import com.mark43.user.dto.CertificationDto;
+import com.mark43.user.dto.certification.CertificationDto;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Map;
 import java.util.UUID;
 
 public interface CertificationService {

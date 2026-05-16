@@ -300,63 +300,24 @@ public final class DateTimeUtil {
 
         return date.atTime(LocalTime.MAX);
     }
-
-    /**
-     * Get age from DOB
-     */
     public static int calculateAge(LocalDate dob) {
-
-        if (dob == null) {
-            return 0;
-        }
-
-        return Period.between(
-                dob,
-                LocalDate.now()
-        ).getYears();
+        if (dob == null) return 0;
+        return Period.between(dob,LocalDate.now()).getYears();
     }
 
-    /**
-     * Convert LocalDateTime to epoch milliseconds
-     */
-    public static long toEpochMilli(
-            LocalDateTime dateTime
-    ) {
-
-        return dateTime.atZone(
-                ZoneId.systemDefault()
-        ).toInstant().toEpochMilli();
+    public static long toEpochMilli(LocalDateTime dateTime) {
+        return dateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
     }
 
-    /**
-     * Convert epoch milliseconds to LocalDateTime
-     */
-    public static LocalDateTime fromEpochMilli(
-            long epochMilli
-    ) {
-
-        return LocalDateTime.ofInstant(
-                Instant.ofEpochMilli(epochMilli),
-                ZoneId.systemDefault()
-        );
+    public static LocalDateTime fromEpochMilli(long epochMilli) {
+        return LocalDateTime.ofInstant(Instant.ofEpochMilli(epochMilli),ZoneId.systemDefault());
     }
 
-    /**
-     * Get current UTC time
-     */
-    public static LocalDateTime utcNow() {
+    public static LocalDateTime utcNow() {return LocalDateTime.now(ZoneOffset.UTC);}
 
-        return LocalDateTime.now(ZoneOffset.UTC);
-    }
-
-    /**
-     * Check leap year
-     */
     public static boolean isLeapYear(int year) {
         return Year.isLeap(year);
     }
-
-
     public static OffsetDateTime currentUtcDateTime() {
         return OffsetDateTime.now(ZoneOffset.UTC);
     }

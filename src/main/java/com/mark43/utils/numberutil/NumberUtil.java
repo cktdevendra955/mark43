@@ -12,30 +12,18 @@ public final class NumberUtil {
     private NumberUtil() {
     }
 
-    /**
-     * Check number is null
-     */
     public static boolean isNull(Number number) {
         return number == null;
     }
 
-    /**
-     * Check number is not null
-     */
     public static boolean isNotNull(Number number) {
         return number != null;
     }
 
-    /**
-     * Check integer is even
-     */
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
-    /**
-     * Check integer is odd
-     */
     public static boolean isOdd(int number) {
         return number % 2 != 0;
     }

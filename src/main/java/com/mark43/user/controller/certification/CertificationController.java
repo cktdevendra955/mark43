@@ -1,6 +1,6 @@
 package com.mark43.user.controller.certification;
 
-import com.mark43.user.dto.CertificationDto;
+import com.mark43.user.dto.certification.CertificationDto;
 import com.mark43.user.service.certification.CertificationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
