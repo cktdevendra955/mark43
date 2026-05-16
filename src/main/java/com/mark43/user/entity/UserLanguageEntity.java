@@ -14,14 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserLanguageEntity extends BaseEntity {
-
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
-
-    @ManyToOne
-    @JoinColumn(name = "language_id")
-    private LanguageEntity language;
-
+    private Long profileId;
+    private Long languageId;
     private String proficiencyLevel;
 }

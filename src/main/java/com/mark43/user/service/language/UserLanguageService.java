@@ -1,15 +1,16 @@
 package com.mark43.user.service.language;
 
-import com.mark43.user.dto.UserLanguageDto;
+import com.mark43.user.dto.language.UserLanguageDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
+import java.util.UUID;
 
 public interface UserLanguageService {
 
     ResponseEntity<?> create(UserLanguageDto dto);
 
-    Map<String,Object> getByProfileId(String profileId);
+    ResponseEntity<?> getAllByUser();
 
-    ResponseEntity<?> delete(Long id);
+    ResponseEntity<?> delete(UUID uniqueId);
 }
