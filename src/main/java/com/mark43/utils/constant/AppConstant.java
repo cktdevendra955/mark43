@@ -13,7 +13,7 @@ public final class AppConstant {
 
     public static final String APP_NAME = "Mark-43";
 
-    public static final String API_VERSION = "/api/v1";
+    public static final String API_VERSION = "/api/v1/";
 
     public static final String DEFAULT_LANGUAGE = "en";
 
@@ -270,4 +270,7 @@ public final class AppConstant {
     public static final String REJECTED = "REJECTED";
 
     public static final String HIRED = "HIRED";
+
+
+
 }

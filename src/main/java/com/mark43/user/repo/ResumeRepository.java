@@ -14,4 +14,6 @@ public interface ResumeRepository extends JpaRepository<ResumeEntity, Long> {
 
     Optional<ResumeEntity> findByProfileIdAndPrimaryResumeTrue(Long profileId);
     Optional<ResumeEntity> findByUniqueId(UUID uniqueId);
+
+
 }

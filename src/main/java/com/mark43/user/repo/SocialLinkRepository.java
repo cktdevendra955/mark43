@@ -12,4 +12,5 @@ import java.util.UUID;
 public interface SocialLinkRepository extends JpaRepository<SocialLinkEntity, Long> {
     List<SocialLinkEntity> findByProfileId(Long profileId);
     Optional<SocialLinkEntity> findByUniqueId(UUID uniqueId);
+
 }

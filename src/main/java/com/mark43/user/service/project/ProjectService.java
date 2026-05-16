@@ -1,19 +1,16 @@
 package com.mark43.user.service.project;
 
 
-import com.mark43.user.dto.ProjectDto;
-import com.mark43.user.entity.ProjectEntity;
+import com.mark43.user.dto.project.ProjectDto;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Map;
+import java.util.UUID;
 
 public interface ProjectService {
 
+
     ResponseEntity<?> create(ProjectDto dto);
-
-    ResponseEntity<?> update(String id, ProjectDto dto);
-
-    Map<String,Object> getByProfileId(String profileId);
-
-    ResponseEntity<?> delete(String id);
+    ResponseEntity<?> update(UUID uniqueId, ProjectDto dto);
+    ResponseEntity<?> getAllByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
 }
