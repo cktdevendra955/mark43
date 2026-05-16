@@ -14,9 +14,7 @@ import java.time.LocalDate;
 @Setter
 public class ExperienceEntity extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
+    private Long profile;
 
     private String companyName;
 

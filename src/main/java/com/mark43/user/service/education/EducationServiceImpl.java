@@ -60,19 +60,20 @@ public class EducationServiceImpl implements EducationService{
     @Override
     public ResponseEntity<?> getAllByUser() {
         Map<String, Object> response = new HashMap<>();
-        List<Map<String, Object>> data_array = new LinkedList<>();
+        List<EducationResponseDto> data_array = new LinkedList<>();
         List<EducationEntity> dataList = educationRepository.findByProfileId(AuthUtil.getUserProfileId());
         if (CollectionUtil.isNotEmpty(dataList)){
             for (EducationEntity entity :dataList){
-                EducationResponseDto dto = new EducationResponseDto();
-                dto.setUniqueId(entity.getUniqueId());
-                dto.setInstituteName(entity.getInstituteName());
-                dto.setDegree(entity.getDegree());
-                dto.setFieldOfStudy(entity.getFieldOfStudy());
-                dto.setPercentage(entity.getPercentage());
-                dto.setStartDate(entity.getStartDate());
-                dto.setEndDate(entity.getEndDate());
-                dto.setCurrentlyPursuing(entity.getCurrentlyPursuing());
+                EducationResponseDto responseDto = new EducationResponseDto();
+                responseDto.setUniqueId(entity.getUniqueId());
+                responseDto.setInstituteName(entity.getInstituteName());
+                responseDto.setDegree(entity.getDegree());
+                responseDto.setFieldOfStudy(entity.getFieldOfStudy());
+                responseDto.setPercentage(entity.getPercentage());
+                responseDto.setStartDate(entity.getStartDate());
+                responseDto.setEndDate(entity.getEndDate());
+                responseDto.setCurrentlyPursuing(entity.getCurrentlyPursuing());
+                data_array.add(responseDto);
             }
         }
         response.put(ResponseUtils.KEY_DATA_ARRAY,data_array);

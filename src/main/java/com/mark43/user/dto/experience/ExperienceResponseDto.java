@@ -1,4 +1,4 @@
-package com.mark43.user.dto;
+package com.mark43.user.dto.experience;
 
 import jakarta.persistence.Column;
 import lombok.Getter;
@@ -8,20 +8,13 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class ExperienceDto {
+public class ExperienceResponseDto {
     private String companyName;
-
     private String designation;
-
     private String responsibilities;
-
     private String employmentType;
-
     private String location;
-
     private LocalDate startDate;
-
     private LocalDate endDate;
-
     private Boolean currentlyWorking;
 }
