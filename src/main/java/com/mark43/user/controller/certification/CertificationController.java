@@ -28,7 +28,7 @@ public class CertificationController {
         return this.certificationService.update(id,dto);
     }
 
-    @PutMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id){
         return this.certificationService.delete(id);
     }

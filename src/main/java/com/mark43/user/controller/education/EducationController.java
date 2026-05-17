@@ -26,7 +26,7 @@ public class EducationController {
         return this.educationService.update(id,dto);
     }
 
-    @PutMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id){
         return this.educationService.delete(id);
     }

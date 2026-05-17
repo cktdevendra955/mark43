@@ -25,7 +25,7 @@ public class ExperienceController {
     }
     @PutMapping("{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") UUID id, ExperienceDto dto){return this.experienceService.update(id,dto);}
-    @PutMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id){
         return this.experienceService.delete(id);
     }

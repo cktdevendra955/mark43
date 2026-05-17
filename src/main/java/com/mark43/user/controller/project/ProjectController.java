@@ -27,6 +27,6 @@ public class ProjectController {
     }
     @PutMapping("{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") UUID id, ProjectDto dto){return this.projectService.update(id,dto);}
-    @PutMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id){return this.projectService.delete(id);}
 }

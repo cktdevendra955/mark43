@@ -24,7 +24,7 @@ public class UserLanguageController {
         return this.userLanguageService.create(dto);
     }
 
-    @PutMapping("{id}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") UUID id){return this.userLanguageService.delete(id);}
 
 }

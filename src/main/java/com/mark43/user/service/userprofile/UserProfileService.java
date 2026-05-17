@@ -1,4 +1,4 @@
-package com.mark43.user.service;
+package com.mark43.user.service.userprofile;
 
 import org.springframework.http.ResponseEntity;
 
