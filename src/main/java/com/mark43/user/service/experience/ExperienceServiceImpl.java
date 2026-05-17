@@ -2,10 +2,8 @@ package com.mark43.user.service.experience;
 
 import com.mark43.auth.utils.AuthUtil;
 import com.mark43.exception.custom.ResourceNotFoundException;
-import com.mark43.user.dto.ExperienceDto;
-import com.mark43.user.dto.education.EducationResponseDto;
+import com.mark43.user.dto.experience.ExperienceDto;
 import com.mark43.user.dto.experience.ExperienceResponseDto;
-import com.mark43.user.entity.EducationEntity;
 import com.mark43.user.entity.ExperienceEntity;
 import com.mark43.user.repo.ExperienceRepository;
 import com.mark43.utils.collectionutil.CollectionUtil;

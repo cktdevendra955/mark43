@@ -2,9 +2,8 @@ package com.mark43.user.service.education;
 
 import com.mark43.auth.utils.AuthUtil;
 import com.mark43.exception.custom.ResourceNotFoundException;
-import com.mark43.user.dto.EducationDto;
+import com.mark43.user.dto.education.EducationDto;
 import com.mark43.user.dto.education.EducationResponseDto;
-import com.mark43.user.entity.CertificationEntity;
 import com.mark43.user.entity.EducationEntity;
 import com.mark43.user.repo.EducationRepository;
 import com.mark43.utils.collectionutil.CollectionUtil;

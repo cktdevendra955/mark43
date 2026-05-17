@@ -1,6 +1,6 @@
 package com.mark43.user.service.experience;
 
-import com.mark43.user.dto.ExperienceDto;
+import com.mark43.user.dto.experience.ExperienceDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.UUID;

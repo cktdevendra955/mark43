@@ -1,6 +1,6 @@
 package com.mark43.user.service.education;
 
-import com.mark43.user.dto.EducationDto;
+import com.mark43.user.dto.education.EducationDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.UUID;

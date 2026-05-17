@@ -1,4 +1,4 @@
-package com.mark43.user.dto;
+package com.mark43.user.dto.education;
 import com.mark43.user.entity.UserProfileEntity;
 import lombok.Getter;
 import lombok.Setter;

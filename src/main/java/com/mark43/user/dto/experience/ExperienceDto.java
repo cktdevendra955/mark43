@@ -1,6 +1,5 @@
-package com.mark43.user.dto;
+package com.mark43.user.dto.experience;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 

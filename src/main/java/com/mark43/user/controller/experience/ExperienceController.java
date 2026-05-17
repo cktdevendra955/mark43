@@ -1,8 +1,6 @@
 package com.mark43.user.controller.experience;
 
-import com.mark43.user.dto.EducationDto;
-import com.mark43.user.dto.ExperienceDto;
-import com.mark43.user.service.education.EducationService;
+import com.mark43.user.dto.experience.ExperienceDto;
 import com.mark43.user.service.experience.ExperienceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

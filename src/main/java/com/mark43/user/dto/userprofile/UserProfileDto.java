@@ -1,18 +1,13 @@
-package com.mark43.user.entity;
+package com.mark43.user.dto.userprofile;
 
-import com.mark43.auth.entity.user.UserEntity;
-import com.mark43.basefiles.BaseEntity;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "user_profiles")
 @Getter
 @Setter
-public class UserProfileEntity extends BaseEntity {
+public class UserProfileDto {
     private Long userId;
     private String headline;
 
@@ -51,5 +46,4 @@ public class UserProfileEntity extends BaseEntity {
     private Boolean openToWork = true;
 
     private Boolean profileCompleted = false;
-
 }

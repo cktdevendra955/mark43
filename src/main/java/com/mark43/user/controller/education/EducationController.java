@@ -1,6 +1,6 @@
 package com.mark43.user.controller.education;
 
-import com.mark43.user.dto.EducationDto;
+import com.mark43.user.dto.education.EducationDto;
 import com.mark43.user.service.education.EducationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
