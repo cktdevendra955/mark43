@@ -5,9 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SkillDto {
-    private Long profileId;
-    private Long skillId;
+public class UserSkillResponseDto {
     private Integer experienceYears;
     private String proficiencyLevel;
 }

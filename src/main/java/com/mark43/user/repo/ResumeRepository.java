@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public interface ResumeRepository extends JpaRepository<ResumeEntity, Long> {
 
-    List<ResumeEntity> findByProfileId(Long profileId);
+    Optional<ResumeEntity> findByProfileId(Long profileId);
 
     Optional<ResumeEntity> findByProfileIdAndPrimaryResumeTrue(Long profileId);
     Optional<ResumeEntity> findByUniqueId(UUID uniqueId);

@@ -14,9 +14,7 @@ import lombok.Setter;
 @Setter
 public class ResumeEntity extends BaseEntity {
 
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
+    private Long profileId;
     private String resumeName;
     private String resumeUrl;
     private Boolean primaryResume = false;

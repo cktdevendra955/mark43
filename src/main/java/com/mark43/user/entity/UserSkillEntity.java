@@ -11,6 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserSkillEntity extends BaseEntity {
-
-    private String name;
+    private Long profileId;
+    private Long skillId;
+    private Integer experienceYears;
+    private String proficiencyLevel;
 }
