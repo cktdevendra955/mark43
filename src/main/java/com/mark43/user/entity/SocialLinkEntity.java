@@ -14,10 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SocialLinkEntity extends BaseEntity {
-
-    @ManyToOne
-    @JoinColumn(name = "profile_id")
-    private UserProfileEntity profile;
+    private Long profileId;
     private String platform;
     private String url;
 }

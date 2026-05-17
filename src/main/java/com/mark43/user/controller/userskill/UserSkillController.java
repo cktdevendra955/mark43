@@ -1,9 +1,7 @@
 package com.mark43.user.controller.userskill;
 
-import com.mark43.user.dto.language.UserLanguageDto;
 import com.mark43.user.dto.skill.UserSkillDto;
-import com.mark43.user.service.skill.UserSkillService;
-import com.mark43.user.service.userlanguage.UserLanguageService;
+import com.mark43.user.service.userskill.UserSkillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

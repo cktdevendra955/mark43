@@ -1,15 +1,12 @@
 package com.mark43.user.service.userskill;
 
-
+import com.mark43.user.dto.skill.UserSkillDto;
 import org.springframework.http.ResponseEntity;
 
-import java.util.Map;
+import java.util.UUID;
 
 public interface UserSkillService {
-
-    ResponseEntity<?> addSkillToUser(Map<String,Object> dto);
-
-    Map<String,Object> getUserSkills(String userId);
-
-    ResponseEntity<?> removeUserSkill(Long userSkillId);
+    ResponseEntity<?> create(UserSkillDto dto);
+    ResponseEntity<?> getAllByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
 }
