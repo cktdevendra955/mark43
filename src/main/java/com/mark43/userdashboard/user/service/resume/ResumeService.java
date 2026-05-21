@@ -1,0 +1,13 @@
+package com.mark43.userdashboard.user.service.resume;
+
+import com.mark43.userdashboard.user.dto.language.UserLanguageDto;
+import org.springframework.http.ResponseEntity;
+
+import java.util.UUID;
+
+public interface ResumeService {
+
+    ResponseEntity<?> upload(UserLanguageDto dto);
+    ResponseEntity<?> getResumeByUser();
+    ResponseEntity<?> delete(UUID uniqueId);
+}

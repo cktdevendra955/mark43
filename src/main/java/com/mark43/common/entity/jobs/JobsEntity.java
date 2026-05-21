@@ -4,7 +4,7 @@ package com.mark43.common.entity.jobs;
 import com.mark43.basefiles.BaseEntity;
 import com.mark43.common.entity.skill.SkillEntity;
 
-import com.mark43.user.entity.UserProfileEntity;
+import com.mark43.userdashboard.user.entity.UserProfileEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

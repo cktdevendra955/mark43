@@ -1,0 +1,14 @@
+package com.mark43.userdashboard.user.dto.resume;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class ResumeResponseDto {
+
+    private Long profileId;
+    private String resumeName;
+    private String resumeUrl;
+    private Boolean primaryResume = false;
+}
