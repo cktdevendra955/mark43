@@ -63,28 +63,7 @@ public final class CollectionUtil {
         return new ArrayList<>(new LinkedHashSet<>(list));
     }
 
-    public static <T> List<T> merge(List<T> first,List<T> second) {
-        List<T> merged = new ArrayList<>();
-        if (first != null) merged.addAll(first);
-        if (second != null) merged.addAll(second);
-        return merged;
-    }
-    public static <T> List<List<T>> partition(List<T> list,int size) {
-        List<List<T>> partitions = new ArrayList<>();
-        if (isEmpty(list) || size <= 0) return partitions;
 
-        for (int i = 0; i < list.size(); i += size) {
-            partitions.add(list.subList(i,Math.min(i + size, list.size())));
-        }
-        return partitions;
-    }
-    public static String join(Collection<?> collection) {
-        return join(collection, ", ");
-    }
-    public static String join(Collection<?> collection,String delimiter) {
-        if (isEmpty(collection)) return "";
-        return collection.stream().map(String::valueOf).collect(Collectors.joining(delimiter));
-    }
     public static <T extends Comparable<? super T>> List<T> sortAsc(List<T> list) {
         if (isEmpty(list)) return Collections.emptyList();
         return list.stream().sorted().toList();
@@ -94,38 +73,10 @@ public final class CollectionUtil {
 
         return list.stream().sorted(Comparator.reverseOrder()).toList();
     }
-    public static <T, K> Map<K, T> toMap(List<T> list,Function<T, K> keyMapper) {
-        if (isEmpty(list)) return Collections.emptyMap();
-        return list.stream().collect(Collectors.toMap(keyMapper,Function.identity()));
-    }
-
     public static <T> List<T> shuffle(List<T> list) {
         if (isEmpty(list)) return Collections.emptyList();
         List<T> shuffled = new ArrayList<>(list);
         Collections.shuffle(shuffled);
         return shuffled;
-    }
-
-    public static <T> List<T> reverse(List<T> list) {
-        if (isEmpty(list)) return Collections.emptyList();
-        List<T> reversed = new ArrayList<>(list);
-        Collections.reverse(reversed);
-        return reversed;
-    }
-
-    public static <T> List<T> immutableList(List<T> list) {
-        return list == null? List.of(): List.copyOf(list);
-    }
-    public static <T> Set<T> immutableSet(Set<T> set) {
-        return set == null? Set.of(): Set.copyOf(set);
-    }
-
-    public static <K, V> Map<K, V> immutableMap(Map<K, V> map) {
-        return map == null? Map.of(): Map.copyOf(map);
-    }
-    public static <T> T random(List<T> list) {
-        if (isEmpty(list)) return null;
-        Random random = new Random();
-        return list.get(random.nextInt(list.size()));
     }
 }

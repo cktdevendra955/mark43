@@ -16,6 +16,7 @@ public final class PaginationUtil {
 
     public static final int DEFAULT_SIZE = 10;
     public static final int MAX_PAGE_SIZE = 100;
+
     public static Pageable pageable(Integer page,Integer size,String sortBy,String direction) {
         int pageNumber = page == null || page < 0 ? DEFAULT_PAGE : page;
         int pageSize = size == null || size <= 0 ? DEFAULT_SIZE : Math.min(size, MAX_PAGE_SIZE);

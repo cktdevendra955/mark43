@@ -53,10 +53,6 @@ public final class StringUtil {
     }
 
 
-    public static String reverse(String value) {
-        if (value == null) return null;
-        return new StringBuilder(value).reverse().toString();
-    }
 
     public static String removeSpaces(String value) {
         if (value == null) return null;
@@ -98,31 +94,9 @@ public final class StringUtil {
         return "******" + phone.substring(6);
     }
 
-    public static String repeat(String value, int count) {
-        if (value == null || count <= 0) return "";
-        return value.repeat(count);
-    }
 
-    public static boolean equals(String s1, String s2) {
-        if (s1 == null && s2 == null) {
-            return true;
-        }
-        if (s1 == null || s2 == null) {
-            return false;
-        }
-        return s1.equals(s2);
-    }
 
-    public static boolean equalsIgnoreCase(String s1,String s2) {
-        if (s1 == null && s2 == null) {
-            return true;
-        }
-        if (s1 == null || s2 == null) {
-            return false;
-        }
 
-        return s1.equalsIgnoreCase(s2);
-    }
 
     public static String toUpperCase(String value) {
         return value == null ? null : value.toUpperCase();
@@ -133,19 +107,12 @@ public final class StringUtil {
     }
 
     public static String getInitials(String name) {
-
-        if (isNullOrEmpty(name)) {
-            return "";
-        }
+        if (isNullOrEmpty(name)) return "";
 
         String[] words = name.trim().split("\\s+");
-
         StringBuilder initials = new StringBuilder();
-
         for (String word : words) {
-            initials.append(
-                    Character.toUpperCase(word.charAt(0))
-            );
+            initials.append(Character.toUpperCase(word.charAt(0)));
         }
 
         return initials.toString();
