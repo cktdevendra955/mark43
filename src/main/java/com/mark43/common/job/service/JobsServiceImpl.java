@@ -1,7 +1,7 @@
-package com.mark43.common.service.jobs;
-import com.mark43.common.dto.JobsDto;
-import com.mark43.common.entity.jobs.JobsEntity;
-import com.mark43.common.repo.jobs.JobsRepository;
+package com.mark43.common.job.service;
+import com.mark43.common.job.dto.JobsDto;
+import com.mark43.common.job.entity.JobsEntity;
+import com.mark43.common.job.repository.JobsRepository;
 
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;

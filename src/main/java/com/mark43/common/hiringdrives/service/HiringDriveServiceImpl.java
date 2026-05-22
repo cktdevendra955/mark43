@@ -1,8 +1,8 @@
-package com.mark43.common.service.hiringdrives;
+package com.mark43.common.hiringdrives.service;
 
-import com.mark43.common.dto.HiringDriveDto;
-import com.mark43.common.entity.hiringdrives.HiringDriveEntity;
-import com.mark43.common.repo.hiringdrives.HiringDriveRepository;
+import com.mark43.common.hiringdrives.dto.HiringDriveDto;
+import com.mark43.common.hiringdrives.entity.HiringDriveEntity;
+import com.mark43.common.hiringdrives.repository.HiringDriveRepository;
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

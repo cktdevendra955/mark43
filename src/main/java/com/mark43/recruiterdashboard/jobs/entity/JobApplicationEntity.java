@@ -2,7 +2,6 @@ package com.mark43.recruiterdashboard.jobs.entity;
 
 
 import com.mark43.basefiles.BaseEntity;
-import com.mark43.common.entity.jobs.JobsEntity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

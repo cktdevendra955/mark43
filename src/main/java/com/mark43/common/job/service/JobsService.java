@@ -1,7 +1,7 @@
-package com.mark43.common.service.jobs;
+package com.mark43.common.job.service;
 
 
-import com.mark43.common.dto.JobsDto;
+import com.mark43.common.job.dto.JobsDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;

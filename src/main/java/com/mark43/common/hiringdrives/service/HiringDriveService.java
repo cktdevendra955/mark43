@@ -1,6 +1,6 @@
-package com.mark43.common.service.hiringdrives;
+package com.mark43.common.hiringdrives.service;
 
-import com.mark43.common.dto.HiringDriveDto;
+import com.mark43.common.hiringdrives.dto.HiringDriveDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.mark43.common.dto;
+package com.mark43.common.hiringdrives.dto;
 
 import lombok.Getter;
 import lombok.Setter;

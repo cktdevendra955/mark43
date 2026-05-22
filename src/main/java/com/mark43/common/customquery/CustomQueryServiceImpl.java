@@ -1,4 +1,4 @@
-package com.mark43.common.service.customquery;
+package com.mark43.common.customquery;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

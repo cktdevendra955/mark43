@@ -1,6 +1,6 @@
 package com.mark43.userdashboard.jobs.service;
 
-import com.mark43.common.service.customquery.CustomQueryServiceImpl;
+import com.mark43.common.customquery.CustomQueryServiceImpl;
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
