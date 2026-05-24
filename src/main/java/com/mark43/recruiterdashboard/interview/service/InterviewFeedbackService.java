@@ -11,4 +11,6 @@ public interface InterviewFeedbackService {
     ResponseEntity<?> getAll(Map<String, Object> params);
     ResponseEntity<?> getByUniqueId(UUID uniqueId);
     ResponseEntity<?> delete(UUID uniqueId);
+
+
 }

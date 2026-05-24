@@ -14,6 +14,8 @@ public final class AppConstant {
     public static final String APP_NAME = "Mark-43";
 
     public static final String API_VERSION = "/api/v1/";
+    public static final String API_DASHBOARD = "/api/v1/dashboard/";
+    public static final String API_RECRUITER = "/api/v1/recruiter/";
 
     public static final String DEFAULT_LANGUAGE = "en";
 

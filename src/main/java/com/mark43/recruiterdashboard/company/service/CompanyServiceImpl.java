@@ -76,6 +76,8 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public ResponseEntity<?> delete(UUID uniqueId) {
+
+        
         return ResponseUtils.created(ResponseUtils.DELETED_SUCCESSFULLY,null);
     }
 }
