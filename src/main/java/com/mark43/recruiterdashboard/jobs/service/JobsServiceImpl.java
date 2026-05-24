@@ -1,7 +1,7 @@
-package com.mark43.common.job.service;
-import com.mark43.common.job.dto.JobsDto;
-import com.mark43.common.job.entity.JobsEntity;
-import com.mark43.common.job.repository.JobsRepository;
+package com.mark43.recruiterdashboard.jobs.service;
+import com.mark43.recruiterdashboard.jobs.dto.JobsDto;
+import com.mark43.recruiterdashboard.jobs.entity.JobsEntity;
+import com.mark43.recruiterdashboard.jobs.repository.JobsRepository;
 
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;

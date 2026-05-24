@@ -1,4 +1,4 @@
-package com.mark43.common.hiringdrives.entity;
+package com.mark43.recruiterdashboard.hiringdrives.entity;
 
 import com.mark43.basefiles.BaseEntity;
 import com.mark43.common.entity.skill.SkillEntity;

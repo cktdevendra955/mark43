@@ -1,4 +1,4 @@
-package com.mark43.common.job.dto;
+package com.mark43.recruiterdashboard.jobs.dto;
 
 import lombok.Getter;
 import lombok.Setter;

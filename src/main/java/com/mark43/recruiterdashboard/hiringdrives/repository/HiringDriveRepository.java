@@ -1,6 +1,6 @@
-package com.mark43.common.hiringdrives.repository;
+package com.mark43.recruiterdashboard.hiringdrives.repository;
 
-import com.mark43.common.hiringdrives.entity.HiringDriveEntity;
+import com.mark43.recruiterdashboard.hiringdrives.entity.HiringDriveEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

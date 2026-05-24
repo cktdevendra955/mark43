@@ -1,5 +1,5 @@
 
-package com.mark43.common.job.entity;
+package com.mark43.recruiterdashboard.jobs.entity;
 
 import com.mark43.basefiles.BaseEntity;
 import com.mark43.common.entity.skill.SkillEntity;

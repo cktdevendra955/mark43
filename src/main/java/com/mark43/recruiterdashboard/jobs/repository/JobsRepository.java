@@ -1,6 +1,6 @@
-package com.mark43.common.job.repository;
+package com.mark43.recruiterdashboard.jobs.repository;
 
-import com.mark43.common.job.entity.JobsEntity;
+import com.mark43.recruiterdashboard.jobs.entity.JobsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
