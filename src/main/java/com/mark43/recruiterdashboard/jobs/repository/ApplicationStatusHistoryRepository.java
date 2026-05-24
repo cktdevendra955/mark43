@@ -1,5 +1,6 @@
 package com.mark43.recruiterdashboard.jobs.repository;
 
+import com.mark43.recruiterdashboard.interview.entity.InterviewEntity;
 import com.mark43.recruiterdashboard.jobs.entity.ApplicationStatusHistoryEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.OffsetDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -16,6 +18,7 @@ public interface ApplicationStatusHistoryRepository extends JpaRepository<Applic
 
     boolean existsByUniqueId(UUID uniqueId);
     void deleteByUniqueId(UUID uniqueId);
+    Optional<ApplicationStatusHistoryEntity> findByUniqueId(UUID uniqueId);
 
 
     @Modifying

@@ -1,23 +1,31 @@
 package com.mark43.recruiterdashboard.jobs.service;
+import com.mark43.auth.utils.AuthUtil;
+import com.mark43.exception.custom.ResourceNotFoundException;
+import com.mark43.recruiterdashboard.jobs.dto.ApplicationStatusHistoryDto;
+import com.mark43.recruiterdashboard.jobs.dto.JobApplicationDto;
 import com.mark43.recruiterdashboard.jobs.dto.JobsDto;
+import com.mark43.recruiterdashboard.jobs.entity.ApplicationStatusHistoryEntity;
+import com.mark43.recruiterdashboard.jobs.entity.JobApplicationEntity;
 import com.mark43.recruiterdashboard.jobs.entity.JobsEntity;
+import com.mark43.recruiterdashboard.jobs.repository.ApplicationStatusHistoryRepository;
+import com.mark43.recruiterdashboard.jobs.repository.JobApplicationRepository;
 import com.mark43.recruiterdashboard.jobs.repository.JobsRepository;
 
+import com.mark43.utils.datetimeutil.DateTimeUtil;
 import com.mark43.utils.response.ResponseUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
 public class JobsServiceImpl implements JobsService {
 
     private final JobsRepository jobsRepository;
+    private final JobApplicationRepository jobApplicationRepository;
+    private final ApplicationStatusHistoryRepository applicationStatusHistoryRepository;
 
     @Override
     public ResponseEntity<?> create(JobsDto dto) {
@@ -119,5 +127,132 @@ public class JobsServiceImpl implements JobsService {
         entity.setActive(dto.getActive());
         entity.setTotalApplications(dto.getTotalApplications());
         entity.setStatus(dto.getStatus());
+    }
+
+
+    @Override
+    public ResponseEntity<?> jobApplicationCreate(JobApplicationDto dto) {
+        JobApplicationEntity application = new JobApplicationEntity();
+        application.setResumeUrl(dto.getResumeUrl());
+        application.setCoverLetter(dto.getCoverLetter());
+        application.setStatus(dto.getStatus());
+        application.setAppliedVia(dto.getAppliedVia());
+        application.setViewed(dto.getViewed());
+        application.setShortlisted(dto.getShortlisted());
+        application.setRejected(dto.getRejected());
+        jobApplicationRepository.save(application);
+        return ResponseUtils.created(ResponseUtils.CREATED_SUCCESSFULLY,application);
+    }
+
+    @Override
+    public ResponseEntity<?> jobApplicationUpdate(UUID uniqueId, JobApplicationDto dto) {
+        JobApplicationEntity application = jobApplicationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
+        application.setResumeUrl(dto.getResumeUrl());
+        application.setCoverLetter(dto.getCoverLetter());
+        application.setStatus(dto.getStatus());
+        application.setAppliedVia(dto.getAppliedVia());
+        application.setViewed(dto.getViewed());
+        application.setShortlisted(dto.getShortlisted());
+        application.setRejected(dto.getRejected());
+        jobApplicationRepository.save(application);
+        return ResponseUtils.success(ResponseUtils.UPDATED_SUCCESSFULLY,application);
+    }
+
+    @Override
+    public ResponseEntity<?> jobApplicationGetAll(Map<String, Object> params) {
+        List<JobApplicationDto> responseDto = new LinkedList<>();
+        List<JobApplicationEntity> applicationList = jobApplicationRepository.findAll();
+        for (JobApplicationEntity application : applicationList) {
+            JobApplicationDto dto = new JobApplicationDto();
+            dto.setUniqueId(application.getUniqueId());
+            dto.setResumeUrl(application.getResumeUrl());
+            dto.setCoverLetter(application.getCoverLetter());
+            dto.setStatus(application.getStatus());
+            dto.setAppliedVia(application.getAppliedVia());
+            dto.setViewed(application.getViewed());
+            dto.setShortlisted(application.getShortlisted());
+            dto.setRejected(application.getRejected());
+            responseDto.add(dto);
+        }
+        return ResponseUtils.success(ResponseUtils.SUCCESS,responseDto);
+    }
+    @Override
+    public ResponseEntity<?> jobApplicationGetByUniqueId(UUID uniqueId) {
+        JobApplicationEntity application = jobApplicationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
+        JobApplicationDto dto = new JobApplicationDto();
+        dto.setUniqueId(application.getUniqueId());
+        dto.setResumeUrl(application.getResumeUrl());
+        dto.setCoverLetter(application.getCoverLetter());
+        dto.setStatus(application.getStatus());
+        dto.setAppliedVia(application.getAppliedVia());
+        dto.setViewed(application.getViewed());
+        dto.setShortlisted(application.getShortlisted());
+        dto.setRejected(application.getRejected());
+        return ResponseUtils.success(ResponseUtils.SUCCESS,dto);
+    }
+
+    @Override
+    public ResponseEntity<?> jobApplicationDelete(UUID uniqueId) {
+        int rows = this.jobApplicationRepository.softDeleteByUniqueId(uniqueId, DateTimeUtil.currentUtcDateTime(), AuthUtil.getUserId());
+        if(rows > 0)return ResponseUtils.success(ResponseUtils.SUCCESS,null);
+        return ResponseUtils.notFound(ResponseUtils.RECORD_NOT_FOUND);
+    }
+
+    @Override
+    public ResponseEntity<?> jobApplicationChangeStatus(UUID uniqueId, String status) {
+        JobApplicationEntity application = jobApplicationRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
+        application.setStatus(status);
+        jobApplicationRepository.save(application);
+        return ResponseUtils.success(ResponseUtils.UPDATED_SUCCESSFULLY,application);
+    }
+
+    @Override
+    public ResponseEntity<?> applicationStatusHistoryCreate(ApplicationStatusHistoryDto dto) {
+        ApplicationStatusHistoryEntity history = new ApplicationStatusHistoryEntity();
+        history.setOldStatus(dto.getOldStatus());
+        history.setNewStatus(dto.getNewStatus());
+        history.setRemarks(dto.getRemarks());
+        applicationStatusHistoryRepository.save(history);
+        return ResponseUtils.created(ResponseUtils.CREATED_SUCCESSFULLY,history);
+    }
+    @Override
+    public ResponseEntity<?> applicationStatusHistoryUpdate(UUID uniqueId, ApplicationStatusHistoryDto dto) {
+        ApplicationStatusHistoryEntity history = applicationStatusHistoryRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
+        history.setOldStatus(dto.getOldStatus());
+        history.setNewStatus(dto.getNewStatus());
+        history.setRemarks(dto.getRemarks());
+        applicationStatusHistoryRepository.save(history);
+        return ResponseUtils.success(ResponseUtils.UPDATED_SUCCESSFULLY,history);
+    }
+    @Override
+    public ResponseEntity<?> applicationStatusHistoryGetAll(Map<String, Object> params) {
+        List<ApplicationStatusHistoryDto> responseDto = new LinkedList<>();
+        List<ApplicationStatusHistoryEntity> historyList = applicationStatusHistoryRepository.findAll();
+        for (ApplicationStatusHistoryEntity history : historyList) {
+            ApplicationStatusHistoryDto dto = new ApplicationStatusHistoryDto();
+            dto.setUniqueId(history.getUniqueId());
+            dto.setOldStatus(history.getOldStatus());
+            dto.setNewStatus(history.getNewStatus());
+            dto.setRemarks(history.getRemarks());
+            responseDto.add(dto);
+        }
+        return ResponseUtils.success(ResponseUtils.SUCCESS,responseDto);
+    }
+    @Override
+    public ResponseEntity<?> applicationStatusHistoryGetByUniqueId(UUID uniqueId) {
+        ApplicationStatusHistoryEntity history = applicationStatusHistoryRepository.findByUniqueId(uniqueId).orElseThrow(() -> new ResourceNotFoundException(ResponseUtils.RECORD_NOT_FOUND));
+        ApplicationStatusHistoryDto dto = new ApplicationStatusHistoryDto();
+        dto.setUniqueId(history.getUniqueId());
+        dto.setOldStatus(history.getOldStatus());
+        dto.setNewStatus(history.getNewStatus());
+        dto.setRemarks(history.getRemarks());
+        return ResponseUtils.success(ResponseUtils.SUCCESS,dto);
+    }
+
+    @Override
+    public ResponseEntity<?> applicationStatusHistoryDelete(UUID uniqueId) {
+        int rows = this.applicationStatusHistoryRepository.softDeleteByUniqueId(uniqueId, DateTimeUtil.currentUtcDateTime(), AuthUtil.getUserId());
+        if(rows > 0)return ResponseUtils.success(ResponseUtils.SUCCESS,null);
+        return ResponseUtils.notFound(ResponseUtils.RECORD_NOT_FOUND);
     }
 }
